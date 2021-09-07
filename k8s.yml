@@ -12,6 +12,7 @@ spec:
       labels:
         app: cluster-in-k8s
     spec:
+      terminationGracePeriodSeconds: 1
       containers:
       - image: okteto.dev/cluster-in-k8s
         name: cluster-in-k8s
