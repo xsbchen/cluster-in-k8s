@@ -1,7 +1,7 @@
 name: main
 image: cluster-in-k8s
-command: node main.js
+image: python:3
+command: ["node", "main.js"]
+workdir: /app
 sync:
   - .:/app
-persistentVolume:
-  enabled: false
