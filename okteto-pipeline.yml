@@ -1,0 +1,4 @@
+deploy:
+  - okteto build -t cluster-in-k8s
+devs:
+  - okteto.yml

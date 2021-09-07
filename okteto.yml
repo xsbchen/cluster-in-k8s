@@ -1,0 +1,7 @@
+name: main
+image: cluster-in-k8s
+command: node main.js
+sync:
+  - .:/app
+persistentVolume:
+  enabled: false
