@@ -2,12 +2,15 @@ const { fork } = require('child_process');
 
 console.log('main started:', new Date());
 
+let lastTime = new Date();
 setInterval(() => {
-  console.log('main timer:', new Date());
+  const nowTime = new Date();
+  console.log('main timer:', nowTime - lastTime);
+  lastTime = nowTime;
 }, 1000);
 
 for (let i = 0; i < 4; i++) {
-  const child = fork('./child.js', {});
+  const child = fork('./child.js', [], { stdio: 'inherit' });
   child.on('exit', (code, signal) => {
     if (signal) {
       console.log(`worker was killed by signal: ${signal}`);
