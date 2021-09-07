@@ -1,7 +1,0 @@
-name: main
-image: cluster-in-k8s
-image: python:3
-command: ["node", "main.js"]
-workdir: /app
-sync:
-  - .:/app

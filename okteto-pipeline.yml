@@ -1,4 +1,3 @@
 deploy:
-  # - okteto build -t cluster-in-k8s
-devs:
-  - okteto.yml
+  - okteto build -t okteto.dev/cluster-in-k8s
+  - kubectl apply -k manifest
